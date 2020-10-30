@@ -23,6 +23,23 @@ namespace Builder
         public MainWindow()
         {
             InitializeComponent();
+
+            Canvas buildingFieldCanvas = new Canvas();
+
+            TextBlock textBlock = new TextBlock();
+
+            textBlock.Text = "4S";
+
+            textBlock.Foreground = new SolidColorBrush(color: Colors.Black);
+
+            Canvas.SetLeft(textBlock, 100);
+
+            Canvas.SetTop(textBlock, 100);
+
+
+            buildingFieldCanvas.Children.Add(textBlock);
+
+            builderField.Children.Add(buildingFieldCanvas);
         }
     }
 }
