@@ -39,8 +39,27 @@ namespace Builder
             rectangle.Stroke = new SolidColorBrush(Colors.Black);
             rectangle.Height = height;
             rectangle.Width = width;
+            rectangle.Fill = Brushes.White;
 
             return rectangle;
+        }
+
+        private void OnMouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Source is Shape shape)
+            {
+                if (e.LeftButton == MouseButtonState.Pressed)
+                {
+                    Point p = e.GetPosition(builderField);
+                    Canvas.SetLeft(shape, p.X - shape.ActualWidth / 2);
+                    Canvas.SetTop(shape, p.Y - shape.ActualHeight / 2);
+                    shape.CaptureMouse();
+                }
+                else
+                {
+                    shape.ReleaseMouseCapture();
+                }
+            }
         }
     }
 }

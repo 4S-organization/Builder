@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1280">
     <Grid>
-        <Canvas x:Name="builderField" Width="400" Height="700" HorizontalAlignment="Left"></Canvas>
+        <Canvas x:Name="builderField" Width="400" Height="700" HorizontalAlignment="Left" MouseMove="OnMouseMove"></Canvas>
     </Grid>
 </Window>
