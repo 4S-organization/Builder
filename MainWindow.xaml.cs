@@ -26,20 +26,21 @@ namespace Builder
 
             Canvas buildingFieldCanvas = new Canvas();
 
-            TextBlock textBlock = new TextBlock();
 
-            textBlock.Text = "4S";
-
-            textBlock.Foreground = new SolidColorBrush(color: Colors.Black);
-
-            Canvas.SetLeft(textBlock, 100);
-
-            Canvas.SetTop(textBlock, 100);
-
-
-            buildingFieldCanvas.Children.Add(textBlock);
+            buildingFieldCanvas.Children.Add(drawRectangle(600, 200, 2));
 
             builderField.Children.Add(buildingFieldCanvas);
+        }
+
+
+        public Rectangle drawRectangle(int height, int width, int wallThickness)
+        {
+            Rectangle rectangle = new Rectangle();
+            rectangle.Stroke = new SolidColorBrush(Colors.Black);
+            rectangle.Height = height;
+            rectangle.Width = width;
+
+            return rectangle;
         }
     }
 }
